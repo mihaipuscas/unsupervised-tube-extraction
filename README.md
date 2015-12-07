@@ -15,6 +15,8 @@ The algorithm is under the MIT License, details in LICENSE
 
 1. MATLAB
 2. caffe
-3. liblinear-1.96
-4. Improved Dense Trajectories
+3. [Selective Search](http://www.science.uva.nl/research/publications/2013/UijlingsIJCV2013/)
+3. [liblinear](http://www.csie.ntu.edu.tw/~cjlin/liblinear/)
+4. [Improved Dense Trajectories](https://lear.inrialpes.fr/people/wang/improved_trajectories)
+5. [Enhanced rdir](http://it.mathworks.com/matlabcentral/fileexchange/32226-recursive-directory-listing-enhanced-rdir)
 

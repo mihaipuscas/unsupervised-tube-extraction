@@ -13,8 +13,8 @@ The algorithm is under the MIT License, details in LICENSE
 
 ### Requirements
 
-1. Improved Dense Trajectories
+1. MATLAB
 2. caffe
 3. liblinear-1.96
-4. MATLAB
+4. Improved Dense Trajectories
 

@@ -9,7 +9,6 @@ This repository contains a Matlab implementation of the code, and has been teste
 
 The algorithm is under the MIT License, details in LICENSE
 
-### Citing
 
 ### Requirements
 

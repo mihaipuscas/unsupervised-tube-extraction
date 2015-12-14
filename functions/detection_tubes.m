@@ -40,6 +40,7 @@ tubes_iou = iou_tubes(Idet1,B_det);
 save([path.output,'/',num2str(scale),'/',num2str(ivid,'%04i'),'_test_tubes_',num2str(opt.peak_select),'.mat'],'tubes_iou','-append')
 display([path.output,'/',num2str(scale),'/',num2str(ivid,'%04i'),'_test_tubes_',num2str(opt.peak_select),'.mat'])
 
+
 %
 %
 tic
@@ -51,9 +52,9 @@ display([path.output,'/',num2str(scale),'/',num2str(ivid,'%04i'),'_test_tubes_',
 %
 %
 tic
-[nmsdet22,resbox22] = second_stagedet1_full(Idet,B_det,datastruct.im,nrvals,n,featall,opt.target_norm,mean_norm);
+[nmsdet22,resbox22,cltr1] = second_stagedet1_full(Idet,B_det,datastruct.im,nrvals,n,featall,opt.target_norm,mean_norm);
 toc
-save([path.output,'/',num2str(scale),'/',num2str(ivid,'%04i'),'_test_tubes_',num2str(opt.peak_select),'.mat'],'nmsdet22','resbox22','-append')
+save([path.output,'/',num2str(scale),'/',num2str(ivid,'%04i'),'_test_tubes_',num2str(opt.peak_select),'.mat'],'nmsdet22','resbox22','cltr1','n','-append')
 display([path.output,'/',num2str(scale),'/',num2str(ivid,'%04i'),'_test_tubes_',num2str(opt.peak_select),'.mat'])
 
 

@@ -1,4 +1,4 @@
-function [nmsdet1,resbox1] = second_stagedet1_full(Idet,B_det,im,nrvals,n,featall,target_norm,mean_norm)
+function [nmsdet1,resbox1,cltr1] = second_stagedet1_full(Idet,B_det,im,nrvals,n,featall,target_norm,mean_norm)
 
 
 for icl=1:size(Idet,1)
@@ -64,22 +64,16 @@ for icl=1:size(proto,1)
 end
 
 
-
-
 for icl=1:size(proto,1)
     track{icl}=cl_track(proto,icl);
     cltr1{icl}=tracks_split_det(track{icl},Idet,B_det,icl,n);
     [W{icl},B{icl},model{icl},nmsdet1{icl},resbox1{icl}]= detectors_load_full (cltr1{icl},im,featall,target_norm,mean_norm);
-  
+    
 end
 
 
 
 end
-
-
-
-
 
 
 

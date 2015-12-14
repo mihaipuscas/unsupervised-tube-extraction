@@ -32,7 +32,7 @@ for licl=1:size(cltr,2)
             
             for k1=1:size(feat_frame,2)
                 if ~isempty(feat_frame(1,k1).feat)
-                    featbox(k,k1).feat=feat_frame(1,k1).feat.*(target_norm/mean_norm);
+                    featbox(k,k1).feat=feat_frame(1,k1).feat;
                     featbox(k,k1).index=feat_frame(1,k1).index;
                     featbox(k,k1).BB=feat_frame(1,k1).BB;
                     featbox(k,k1).overlap=IoU(feat_frame(1,k1).BB,feattube(licl,k).BB);
@@ -68,7 +68,7 @@ for i=1:length(im)
     
     feat_frame=[];
     feat_frame = featall(i, :);
-    feat_frame=feat_norm_line(feat_frame,target_norm,mean_norm);
+%     feat_frame=feat_norm_line(feat_frame,target_norm,mean_norm);
     
     nmsb1=[]; feattotal=[]; nmspick=[];
     for licl=1:size(cltr,2)

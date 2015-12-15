@@ -39,11 +39,16 @@ sigma = 0.8;
 minBoxWidth = 20;
 
 % Comment the following three lines for the 'quality' version
-if fast_mode
+if fast_mode == 1
   colorTypes = colorTypes(1:2); % 'Fast' uses HSV and Lab
   simFunctionHandles = simFunctionHandles(1:2); % Two different merging strategies
   ks = ks(1:2);
+else
+    colorTypes = colorTypes(1); % 'Fast' uses HSV and Lab
+    simFunctionHandles = simFunctionHandles(1:2); % Two different merging strategies
+    ks = 200;
 end
+    
 
 idx = 1;
 for j = 1:length(ks)

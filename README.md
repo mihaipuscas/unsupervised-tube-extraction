@@ -9,6 +9,11 @@ This repository contains a Matlab implementation of the code, and has been teste
 
 The algorithm is under the MIT License, details in LICENSE
 
+### Instructions
+
+- extract the absolute coordinates of the trajectories throughout the video using [Improved Dense Trajectories](https://lear.inrialpes.fr/people/wang/improved_trajectories) with default parameters. 
+  - to maintain a roughly constant number of trajectories in the last frames of the video, we have mirrored the last 3 frames.
+- for cnn feature extraction use the [bvlc_reference_caffenet](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) model -  fc7 features
 
 ### Requirements
 

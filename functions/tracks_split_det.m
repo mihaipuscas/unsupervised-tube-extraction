@@ -80,7 +80,7 @@ while ok
         
         ab=numel(aa);
         
-        for ij = 1:ab
+        for ij = 1 %:ab 
             k=aa(ij);
 
             
@@ -113,7 +113,7 @@ while ok
                 ok=0;
             end
         end
-        
+        k=aa(end)+1;
         i = i+1;
         
     end

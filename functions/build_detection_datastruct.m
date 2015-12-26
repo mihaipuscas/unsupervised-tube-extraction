@@ -1,4 +1,4 @@
-function [B_det, B_detall, Idet1, Idet, nrvals, NN, n] = build_detection_datastruct(datastruct, path, opt, mean_norm, ivid, featall, W, B)
+function [B_det, B_detall, Idet1, Idet, nrvals,  n] = build_detection_datastruct(datastruct, path, opt, mean_norm, ivid, featall, W, B)
 
 
 
@@ -73,7 +73,7 @@ if ~exist('Idet1','var')
     
     
     
-    [Idet, NN, n] = norm_idet_2s (Idet1, B_det);
+    [Idet, ~, n] = norm_idet_2s (Idet1, B_det, datastruct, opt);
     
     save([path.output,'temp/',num2str(ivid,'%04i'),'_temp_',num2str(opt.peak_select),'.mat'],'Idet1','-append')
     
@@ -82,7 +82,7 @@ else
     if ~exist('Idet','var')
         Idet=cell(size(Idet1,1),size(Idet1,2));
     end
-    [Idet, NN, n] = norm_idet_2s (Idet1, B_det);
+    [Idet, ~, n] = norm_idet_2s (Idet1, B_det, datastruct, opt);
 end
 
 

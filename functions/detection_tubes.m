@@ -23,7 +23,7 @@ detindex_traj=dir([path.output,'/',num2str(scale),'/','temp/',num2str(ivid),'/',
 detallindex=dir([path.output,'/',num2str(scale),'/','temp/',num2str(ivid),'/','*_detall.mat']);
 
 
-[B_det, B_detall, Idet1, Idet, nrvals, NN, n] = build_detection_datastruct(datastruct, path, opt, mean_norm, ivid, featall, W, B);
+[B_det, B_detall, Idet1, Idet, nrvals,  n] = build_detection_datastruct(datastruct, path, opt, mean_norm, ivid, featall, W, B);
 
 
 

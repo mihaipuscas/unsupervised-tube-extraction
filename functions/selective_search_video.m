@@ -7,8 +7,7 @@ function selective_search_video(videos, itot, fast_mode)
 
         
         [pathd,name,~] = fileparts(videos(itot).name) ;
-%         pathd=videos(itot).name;
-        
+
         frames=[dir([pathd,'/*.jpg']);dir([pathd,'/*.jpeg'])];
         pathwr=[pathd,'/sel_boxesfast_',num2str(fast_mode),'/']; %fast
         
@@ -21,13 +20,9 @@ function selective_search_video(videos, itot, fast_mode)
                 end
                 im = imread([pathd,'/',frames(i).name]);
                 
-                
-                
-                
+          
                 boxes=selective_search_boxes(im,fast_mode);
-                
-                
-                
+           
                 
                 save([pathwr,'bnb_',name,'.mat'],'boxes');
                 clear boxes blobIndIm blobBoxes hierarchy im

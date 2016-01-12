@@ -12,7 +12,7 @@ ssb=[];
 ssb.coord=boxss;
 imaux=zeros(size(im));
 imaux=im;
-d = load('./caffe/matlab/caffe/ilsvrc_2012_mean');
+d = load('/home/kellanved/Desktop/code_github/caffe/matlab/caffe/ilsvrc_2012_mean');
 
 for j=1:size(ssb.coord,1)
     ymin=ssb.coord(j,1);

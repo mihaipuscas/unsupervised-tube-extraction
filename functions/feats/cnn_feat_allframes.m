@@ -12,11 +12,18 @@ end
 pathstr = fileparts(pathvid);
 frame_index=[rdir([pathstr,'/*.jpg'])];
 featall=[];
-matcaffe_init(use_gpu);
+
+caffe_init = 0;
+
 
 
 
 if ~exist([path.features,num2str(ivid),'_pad.mat'],'file')
+    
+    if ~caffe_init
+        matcaffe_init(use_gpu);
+        caffe_init = 1;
+    end
     
     for i=1:length(frame_index)
         

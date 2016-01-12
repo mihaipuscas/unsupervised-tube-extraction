@@ -1,5 +1,8 @@
 function [nmsdet,resbox] = second_stagedet_full(Idet,B_det,im,nrvals,featall,target_norm,mean_norm)
 
+% second stage detection tubes - full clustering pipeline
+% highest scoring nrvals region proposals are clustered using optiflow
+% clustering
 
 for icl=1:size(Idet,1)
     for i=1:size(Idet,2)
@@ -68,10 +71,16 @@ end
 
 
 for icl=1:size(proto,1)
+    
+    % pairs are clustered into tracks
     track{icl}=cl_track(proto,icl);
+    
+    %tracks are clustered into detection clusters
     cltr{icl}=rest_clustering(track{icl},B_det,icl);
     
     if ~isempty(cltr{icl})
+        % detection clusters are used as positives to train a new iteration
+        % of detectors
         [W{icl},B{icl},model{icl},nmsdet{icl},resbox{icl}]= detectors_load_full (cltr{icl},im,featall,target_norm,mean_norm);
     else
         nmsdet{icl}=[];

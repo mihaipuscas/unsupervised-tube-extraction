@@ -2,6 +2,8 @@ function tubes_iou = iou_tubes (Idet, B_det)
 
 
 % iou tubes
+% highest scoring boxes are matched using highest Intersection over Union
+
 for icl=1:size(Idet,1)
     for i=1:size(Idet,2)
         iou=[];

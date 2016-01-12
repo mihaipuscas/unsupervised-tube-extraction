@@ -14,16 +14,15 @@ if isempty(detallindex)
         end
         B_detall_single=[];
         B_detall_single=B_detall{i};
-%         B_detall{i}=[];
-        save([pathout,'temp/',num2str(ivid),'/',num2str(i),'_detall.mat'],'B_detall_single')
+        save([pathout,'cache/',num2str(ivid),'/',num2str(i),'_detall.mat'],'B_detall_single')
         
     end
-    detallindex=dir([pathout,'temp/',num2str(ivid),'/','*_detall.mat']);
+    detallindex=dir([pathout,'cache/',num2str(ivid),'/','*_detall.mat']);
 else
     
     for i=1:length(frame_index)
         B_detall_single=[];
-        load([pathout,'temp/',num2str(ivid),'/',num2str(i),'_detall.mat']);
+        load([pathout,'cache/',num2str(ivid),'/',num2str(i),'_detall.mat']);
         B_detall{i}=B_detall_single;
     end
 end

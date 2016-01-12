@@ -3,13 +3,13 @@ function nrvals = build_nrvals_2s(ivid, B, threshold_number, pathout)
           
           % number of tubes we're looking for
           
-	      detindex=dir([pathout,'temp/',num2str(ivid),'/','*_det.mat']);
+	      detindex=dir([pathout,'cache/',num2str(ivid),'/','*_det.mat']);
           
 	      nrvals=zeros(size(B,2),1);
 	      for  i=1:size(detindex,1)-1
 		  B_det_single=[];
 		  tic
-		  load([pathout,'temp/',num2str(ivid),'/',num2str(i),'_det.mat']);
+		  load([pathout,'cache/',num2str(ivid),'/',num2str(i),'_det.mat']);
 		  toc
 		  for icl=1:size(B,2)
 		      a=[];
@@ -23,6 +23,6 @@ function nrvals = build_nrvals_2s(ivid, B, threshold_number, pathout)
 		  end
 	      end
 	      
-	      save([pathout,'temp/',num2str(ivid,'%04i'),'_temp_',num2str(threshold_number),'.mat'],'nrvals','-append')
+	      save([pathout,'cache/',num2str(ivid,'%04i'),'_cache_',num2str(threshold_number),'.mat'],'nrvals','-append')
 	      
 end

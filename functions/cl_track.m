@@ -1,5 +1,6 @@
 function track= cl_track(proto,icl)
 
+    % pairs are concatenated into "tracks"
 
     pathcount=1;
     track(pathcount).pt=[];

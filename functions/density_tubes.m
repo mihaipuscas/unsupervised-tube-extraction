@@ -2,6 +2,8 @@ function tubes_dens = density_tubes (Idet,B_det)
 
 
 % density tubes
+% highest scoring boxes are matched using highest density
+
 for icl=1:size(Idet,1)
     for i=1:size(Idet,2)
         density=[];

@@ -7,13 +7,14 @@ addpath(genpath('./caffe'))
 addpath(genpath('./dep'))
 
 
-path.dataset = 'insert_path';      % dataset location
-path.output = 'insert_path';                 % output path
-path.segmentation ='/sel_boxesfast_2/bnb*.mat';                                                 % selective search box file names
-path.trajectories   ='/*impdt11.txt';                                                           % improved dense trajectories file names
-path.features='insert_path';                         % feature files path
-path.logfile ='logfile_gh';                                                                     % log file path
 
+
+path.dataset = '';                                                % dataset location - each video has a folder containing the avi of the video, its extracted frames, and the trajectory text file.
+path.output = './results/';                                       % output path
+path.segmentation ='/sel_boxesfast_2/bnb*.mat';                   % selective search box file names
+path.trajectories   ='/*impdt11.txt';                             % improved dense trajectories file names
+path.features='';                                                 % feature files path
+path.logfile ='logfile_gh';         
 
 
 opt.multiscale    = 1;                              % multiscale, 1 computes tubes for multiple image area ranges

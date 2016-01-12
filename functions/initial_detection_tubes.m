@@ -24,11 +24,15 @@ for icl=1:size(cltr,2)
 end
 
 
+if ~exist([path.output_scale,'cache/',num2str(ivid),'/'],'dir')
+    mkdir([path.output_scale,'cache/',num2str(ivid),'/']);
+end
+
 
 for i=1:length(im)
     
     nmsb1=[]; feattotal=[]; nmspick=[];
-    %                                     figure(1),imshow(im{i});
+
     for icl=1:size(cltr,2)
         
         feats=[];findex=[];
@@ -84,24 +88,27 @@ for i=1:length(im)
     nmspickfin=nms(nmsb1(:,1:5),0.5);
     nmsbox=nmsb1(nmspickfin,1:4);
     
+    
+
+    
     tic
-    save([path.output,'temp/',num2str(ivid),'/',num2str(i),'_det.mat'],'B_det_single','i')
+    save([path.output_scale,'cache/',num2str(ivid),'/',num2str(i),'_det.mat'],'B_det_single','i')
     toc
     B_det_single=[];
     
     resbox=vertcat(resbox,[i 1 nmsbox(1,:)]);
 end
-
-if ~exist ([path.output,'temp/',num2str(ivid,'%04i'),'_temp_',num2str(opt.peak_select),'.mat'],'file')
-    save([path.output,'temp/',num2str(ivid,'%04i'),'_temp_',num2str(opt.peak_select),'.mat'],'W','B','cltr','feattube');
+           
+if ~exist ([path.output_scale,'cache/',num2str(ivid,'%04i'),'_cache_',num2str(opt.peak_select),'.mat'],'file')
+    save([path.output_scale,'cache/',num2str(ivid,'%04i'),'_cache_',num2str(opt.peak_select),'.mat'],'W','B','cltr','feattube');
 else
-    save([path.output,'temp/',num2str(ivid,'%04i'),'_temp_',num2str(opt.peak_select),'.mat'],'W','B','cltr','feattube','-append');
+    save([path.output_scale,'cache/',num2str(ivid,'%04i'),'_cache_',num2str(opt.peak_select),'.mat'],'W','B','cltr','feattube','-append');
 end
 
 
 
-if ~exist([path.output],'dir')
-    mkdir([path.output]);
+if ~exist([path.output_scale],'dir')
+    mkdir([path.output_scale]);
 end
 
 

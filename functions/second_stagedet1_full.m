@@ -1,5 +1,12 @@
 function [nmsdet1,resbox1,cltr1] = second_stagedet1_full(Idet,B_det,im,nrvals,n,featall,target_norm,mean_norm)
 
+% second stage detection tubes - clustering pipeline up to building
+% "tracks"
+% 
+% tracks are shorter and exhibit larger differences between each other.
+% we select the longest n tracks 
+
+
 
 for icl=1:size(Idet,1)
     for i=1:size(Idet,2)
@@ -65,8 +72,10 @@ end
 
 
 for icl=1:size(proto,1)
+    % tracks are built and selected
     track{icl}=cl_track(proto,icl);
     cltr1{icl}=tracks_split_det(track{icl},Idet,B_det,icl,n);
+    % new detectors are trained
     [W{icl},B{icl},model{icl},nmsdet1{icl},resbox1{icl}]= detectors_load_full (cltr1{icl},im,featall,target_norm,mean_norm);
     
 end

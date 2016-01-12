@@ -2,6 +2,7 @@
 
 function [featall,mean_norm] = features_process(path, opt, frame_index, im, ivid)
 
+load ([path.features,num2str(ivid),'_pad.mat']);
 
 % mirror features for mirror frames if they haven't been computed
 if size(featall,1) == size(frame_index,1) - opt.mirror_frames

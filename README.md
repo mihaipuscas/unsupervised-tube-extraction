@@ -2,8 +2,24 @@
 
 ### Introduction
 Algorithm used for unsupervised action tube extraction from videos.
+The method is described [here](http://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Puscas_Unsupervised_Tube_Extraction_ICCV_2015_paper.pdf).
 
 This repository contains a Matlab implementation of the code, and has been tested on Linux, using Matlab R2015a.
+
+### Citing
+
+If you find this unsupervised tube extraction algorithm useful in your research, please consider citing:
+
+    @inproceedings{marian2015unsupervised,
+       title={Unsupervised Tube Extraction Using Transductive Learning and Dense Trajectories},
+       author={Marian Puscas, Mihai and Sangineto, Enver and Culibrk, Dubravko and Sebe, Nicu},
+       booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+       pages={1653--1661},
+       year={2015}
+    }
+
+
+
 
 ### License
 

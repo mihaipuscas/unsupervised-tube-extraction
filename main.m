@@ -65,6 +65,7 @@ for ivid= 1 : length(video)
     target_norm = opt.target_norm;
     
     % compute detection tubes
+    % detection tubes saved in path.output, bounding boxes represented using [ymin, xmin, ymax, xmax]
     for scale = 1 : size(cltr,2)
         detection_tubes(path, opt, datastruct,  ivid , mean_norm, featall, cltr{scale},scale)
     end
